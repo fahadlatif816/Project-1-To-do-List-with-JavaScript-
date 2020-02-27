@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Work To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="workToDos">WORK TO-DOS</h1>
+        <p class="text1">Enter Text in input field to add items to your list (max. 25 characters).</p>
+        <p class="text2">Click the item to mark it as Complete.</p>
+        <p class="text3">Click "E" to to edit the item from the list.</p>
+        <p class="text4">Click "D" to to remove the item from the list.</p>
+        <div class="formContainer">
+            <input type="text" class="inputList" id="todoText" placeholder="New item . . ." maxlength="25" onclick="regenerateLst()">
+            <button class="addButton" onclick="addItem()">Add</button>
+        </div>
+        <div class="todos">
+            <ul class="pendingUL" id="PList">
+                <h3>Pending Tasks List</h3>
+                <p id="demoPending"></p>
+                
+            </ul>
+
+            <ul class="todoUL" id="TDList">
+                <h3>Completed Tasks List</h3>
+                <p id="demoCompleted"></p>
+                
+            </ul>
+
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="multi-list.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

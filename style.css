@@ -1,0 +1,102 @@
+.container{
+    width: auto;
+    height: auto;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 50px;
+}
+
+.workToDos{
+    color: white;
+}
+
+.text1{
+    color: darkgreen;
+}
+
+.text2{
+    color: yellowgreen;
+}
+
+.text3{
+    color: aquamarine;
+}
+
+.text4{
+    color:red;
+}
+
+.formContainer{
+    width: 100%;
+    margin: 5px;
+}
+
+.inputList{
+    width: 60%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.addButton{
+    padding: 6px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+
+.todos{
+    width: 100%;
+    display: block;
+}
+
+.todoUL{
+    width: 40%;
+    display: inline-table;
+}
+
+.pendingUL{
+    width: 40%;
+    display: inline-table;
+}
+
+.todoLI
+{
+    list-style-type: none;
+    width: 70%;
+    padding: 10px 10px;
+    margin: 8px 65px;
+    border-radius: 5px;
+    border: 2px solid #228B22;
+    background-color: #90EE90;
+}
+
+.pendingLI
+{
+    list-style-type: none;
+    width: 70%;
+    padding: 10px 10px;
+    margin: 8px 65px;
+    border-radius: 5px;
+    border: 2px solid #ff0000;
+    background-color: #FFA07A;
+}
+
+.listContent
+{
+    text-align: start;
+}
+
+.cross{
+    float: right;
+}
+
+.crossButton, .editButton{
+    background-color: transparent;
+    border: 0px;
+    font-weight: 900;
+}
