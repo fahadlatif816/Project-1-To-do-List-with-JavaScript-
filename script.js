@@ -71,7 +71,6 @@ function deleteCompleted (obj)
 
 function editPending(obj)
 {
-    console.log(pendingList);
     let value = pendingList[obj.id];
     let text = prompt("Please edit the list name:", value);
     if (text == null || text == "") {
@@ -98,7 +97,6 @@ function editPending(obj)
             }
         }
     }
-    console.log(pendingList);
 }
 
 function regenerateList()
@@ -108,6 +106,7 @@ function regenerateList()
     let allPendingDelBtn = $("li.pendingLI span.cross button.crossButton");
     let allpendingEditBtn = $("li.pendingLI span.cross button.editButton");
     let allToDoDelBtn = $("li.todoLI span.cross button.crossButton");
+    let todoCheckBox = $("li.pendingLI span.pendingCheckBox input");
 
     for(let i=0; i < allToDoListElements.length;i++)
     {
@@ -115,6 +114,7 @@ function regenerateList()
         allToDoListElements[i].id=i+"";
         allPendingDelBtn[i].id=i+"";
         allpendingEditBtn[i].id=i+"";
+        todoCheckBox[i].value=i+"";
     }
 
     for(let i=0; i < allCompletedListElements.length;i++)
@@ -125,14 +125,30 @@ function regenerateList()
     }
 }
 
+function deleteMultiple ()
+{
+    var getCheckedCheckBox = $('li.pendingLI span.pendingCheckBox input:checked');
+    if(getCheckedCheckBox.length==0 || getCheckedCheckBox.length==null)
+    {
+        alert("Select any checkbox!!");
+    }
+    else
+    {
+        for (var i=getCheckedCheckBox.length-1;i>=0;i--)
+        {
+            pendingList.splice(getCheckedCheckBox[i].value,1);
+        }
+        populatePendingList();
+    }
+}
+
 function populatePendingList()
 {
     $("#PList").html("");
-    $("#PList").append(`<h3>Pending Tasks List</h3>
-    <p id="demoPending"></p>`);
     for(let i=0; i<pendingList.length;i++)
     {
         $("#PList").append(`<li class="pendingLI" onmouseover="regenerateList()">
+                <span class="pendingCheckBox"> <input type="checkbox" value=${i} name="pendingRadio"> </span>
                 <span class="listContent" onclick="addtoCompleted(this)" id=${i} >${pendingList[i]}</span>
                 <span class="cross"><button class="crossButton" id=${i} onclick="editPending(this)">E</button>
                 <button class="editButton" id=${i} onclick="deletePending(this)">D</button>
@@ -143,13 +159,14 @@ function populatePendingList()
     {
         $("#demoPending").html("To do List of Pending Tasks is Empty!!");
     }
+    else{
+        $("#demoPending").html("");
+    }
 }
 
 function populateCompletedList()
 {
     $("#TDList").html("");
-    $("#TDList").append(`<h3>Completed Tasks List</h3>
-    <p id="demoCompleted"></p>`);
     for(let i=0; i<completedList.length;i++)
     {
         $("#TDList").append(`<li class="todoLI" onmouseover="regenerateList()">
@@ -160,5 +177,8 @@ function populateCompletedList()
     if(completedList.length==0)
     {
         $("#demoCompleted").html("To do List of Completd Tasks is Empty!!");
+    }
+    else{
+        $("#demoCompleted").html("");
     }
 }

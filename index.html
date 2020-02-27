@@ -14,19 +14,33 @@
         <p class="text3">Click "E" to to edit the item from the list.</p>
         <p class="text4">Click "D" to to remove the item from the list.</p>
         <div class="formContainer">
-            <input type="text" class="inputList" id="todoText" placeholder="New item . . ." maxlength="25" onclick="regenerateLst()">
+            <input type="text" class="inputList" id="todoText" placeholder="New item . . ." maxlength="25" onclick="regenerateList()">
             <button class="addButton" onclick="addItem()">Add</button>
+            <button class="deleteMultipleButton" onclick="deleteMultiple()">Delete Multiple</button>
         </div>
+
+        <div class="todos">
+            <div class="pendingUL">
+                <h3 class="removeMargin">Pending Tasks List</h3>
+                <p id="demoPending"  class="removeMargin"></p>
+                
+            </div>
+
+            <ul class="todoUL">
+                <h3  class="removeMargin">Completed Tasks List</h3>
+                <p  class="removeMargin" id="demoCompleted"></p>
+                
+            </ul>
+
+        </div>
+
+
         <div class="todos">
             <ul class="pendingUL" id="PList">
-                <h3>Pending Tasks List</h3>
-                <p id="demoPending"></p>
                 
             </ul>
 
             <ul class="todoUL" id="TDList">
-                <h3>Completed Tasks List</h3>
-                <p id="demoCompleted"></p>
                 
             </ul>
 
@@ -35,7 +49,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="jquery-ui.js"></script>
-    <script src="multi-list.js"></script>
     <script src="script.js"></script>
     
 </body>
