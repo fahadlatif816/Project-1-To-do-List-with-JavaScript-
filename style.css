@@ -6,8 +6,19 @@
     padding: 50px;
 }
 
+.myHeader{
+    width: 100%;
+    display: inline-flex;
+}
+
+.logo{
+    width: 85px;
+    height: 35px;
+}
+
 .workToDos{
     color: white;
+    width: 92%;
 }
 
 .text1{

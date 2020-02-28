@@ -10,6 +10,7 @@ if(completedList.length==0)
 {
     $("#demoCompleted").html("To do List of Completd Tasks is Empty!!");
 }
+
 $( "#PList" ).sortable();
 $( "#PList" ).disableSelection();
 $( "#TDList" ).sortable();
